@@ -1,7 +1,7 @@
 const { test, expect } = require("@jest/globals");
 const Engineer = require("../library/Engineer");
 
-test("Can make Engineer odject", () => {
+test("Can make Engineer object", () => {
   const e = new Engineer();
   expect(typeof e).toBe("object");
 });

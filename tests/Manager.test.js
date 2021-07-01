@@ -1,7 +1,7 @@
 const { test, expect } = require("@jest/globals");
 const Manager = require("../library/Manager");
 
-test("Can make manager odject", () => {
+test("Can make manager object", () => {
   const e = new Manager();
   expect(typeof e).toBe("object");
 });
