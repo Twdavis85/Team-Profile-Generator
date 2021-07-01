@@ -11,7 +11,7 @@ test("set name", () => {
     expect(e.name).toBe(name)
 });
 test("set id", () => {
-    const id = 35
+    const id = 10
     const e = new Employee("foo", id);
     expect(e.id).toBe(id)
 });
@@ -24,6 +24,16 @@ test("get name", () => {
     const name = "Tyler";
     const e = new Employee(name, 10, "email");
     expect(e.getName()).toBe(name)
+});
+test("get id", () => {
+    const id = 10;
+    const e = new Employee("foo", 10, id);
+    expect(e.getId()).toBe(id)
+});
+test("get email", () => {
+    const email = "tyler@email.com";
+    const e = new Employee("foo", 10, email);
+    expect(e.getEmail()).toBe(email)
 });
 test("get role", () => {
     const role = "Employee";
