@@ -136,7 +136,7 @@ function internCard() {
     employeeRole();
   });
 }
-console.log(team)
+console.log(team);
 init();
 
 // team.push()
