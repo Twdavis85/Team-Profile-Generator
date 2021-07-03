@@ -15,54 +15,48 @@ const managerQuestions = [
     type: "input",
     name: "managerName",
     message: "Enter the team manager's name.",
-    validate: answer => {
+    validate: (answer) => {
       if (answer !== "") {
         return true;
       }
-      return "Please enter at least one character."
-    }
+      return "Please enter at least one character.";
+    },
   },
   {
     type: "input",
     name: "managerId",
     message: "Enter the team manager's employee ID number",
-    validate: answer => {
-      const num = answer.match(
-        /^[1-9]\d+$/
-      );
+    validate: (answer) => {
+      const num = answer.match(/^[1-9]\d*$/);
       if (num) {
         return true;
       }
-      return "Please enter a number greater than zero."
-    }
+      return "Please enter a number greater than zero.";
+    },
   },
   {
     type: "input",
     name: "managerEmail",
     message: "Enter the team manager's email address",
-    validate: answer => {
-      const email = answer.match(
-        /\S+@\S+\.\S+/
-      );
+    validate: (answer) => {
+      const email = answer.match(/\S+@\S+\.\S+/);
       if (email) {
         return true;
       }
-      return "Please enter a valid email address"
-    }
+      return "Please enter a valid email address";
+    },
   },
   {
     type: "input",
     name: "managerOffice",
     message: "Enter the team manager's office number",
-    validate: answer => {
-      const num = answer.match(
-        /^[1-9]\d+$/
-      );
+    validate: (answer) => {
+      const num = answer.match(/^[1-9]\d*$/);
       if (num) {
         return true;
       }
-      return "Please enter a number greater than zero."
-    }
+      return "Please enter a number greater than zero.";
+    },
   },
 ];
 
@@ -71,55 +65,51 @@ const engineerQuestions = [
     type: "input",
     name: "engineerName",
     message: "Enter the engineer's name",
-    validate: answer => {
+    validate: (answer) => {
       if (answer !== "") {
         return true;
       }
-      return "Please enter at least one character."
-    }
+      return "Please enter at least one character.";
+    },
   },
   {
     type: "input",
     name: "engineerId",
     message: "Enter the engineer's employee ID number",
-    validate: answer => {
-      const num = answer.match(
-        /^[1-9]\d+$/
-      );
+    validate: (answer) => {
+      const num = answer.match(/^[1-9]\d*$/);
       if (num) {
         if (employeeID.includes(answer)) {
           return "This ID is already taken. Please enter a different number.";
         } else {
-          return true
+          return true;
         }
       }
-      return "Please enter a number greater than zero."
-    }
+      return "Please enter a number greater than zero.";
+    },
   },
   {
     type: "input",
     name: "engineerEmail",
     message: "Enter the engineer's email address",
-    validate: answer => {
-      const email = answer.match(
-        /\S+@\S+\.\S+/
-      );
+    validate: (answer) => {
+      const email = answer.match(/\S+@\S+\.\S+/);
       if (email) {
         return true;
       }
-      return "Please enter a valid email address"
-    }
+      return "Please enter a valid email address";
+    },
   },
   {
     type: "input",
     name: "engineerGitHub",
     message: "Enter the engineer's GitHub username",
-    validate: answer => {
+    validate: (answer) => {
       if (answer !== "") {
         return true;
       }
-      return "Please enter at least one character."
-    }
+      return "Please enter at least one character.";
+    },
   },
 ];
 
@@ -128,58 +118,53 @@ const internQuestions = [
     type: "input",
     name: "internName",
     message: "Enter the intern's name",
-    validate: answer => {
+    validate: (answer) => {
       if (answer !== "") {
         return true;
       }
-      return "Please enter at least one character."
-    }
+      return "Please enter at least one character.";
+    },
   },
   {
     type: "input",
     name: "internId",
     message: "Enter the intern's employee ID number",
-    validate: answer => {
-      const num = answer.match(
-        /^[1-9]\d+$/
-      );
+    validate: (answer) => {
+      const num = answer.match(/^[1-9]\d*$/);
       if (num) {
         if (employeeID.includes(answer)) {
           return "This ID is already taken. Please enter a different number.";
         } else {
-          return true
+          return true;
         }
       }
-      return "Please enter a number greater than zero."
-    }
+      return "Please enter a number greater than zero.";
+    },
   },
   {
     type: "input",
     name: "internEmail",
     message: "Enter the intern's email address",
-    validate: answer => {
-      const email = answer.match(
-        /\S+@\S+\.\S+/
-      );
+    validate: (answer) => {
+      const email = answer.match(/\S+@\S+\.\S+/);
       if (email) {
         return true;
       }
-      return "Please enter a valid email address"
-    }
+      return "Please enter a valid email address";
+    },
   },
   {
     type: "input",
     name: "internSchool",
     message: "Enter the school/university the intern attended",
-    validate: answer => {
+    validate: (answer) => {
       if (answer !== "") {
         return true;
       }
-      return "Please enter at least one character."
-    }
+      return "Please enter at least one character.";
+    },
   },
 ];
-
 
 function init() {
   inquirer.prompt(managerQuestions).then((answers) => {
@@ -190,7 +175,7 @@ function init() {
       answers.managerOffice
     );
     team.push(manager);
-    employeeID.push(answers.managerId)
+    employeeID.push(answers.managerId);
     employeeRole();
   });
 }
@@ -200,7 +185,8 @@ function employeeRole() {
     {
       type: "list",
       name: "role",
-      message: "Would you like to add another employee? Please select the employee's role.",
+      message:
+        "Would you like to add another employee? Please select the employee's role.",
       choices: ["Engineer", "Intern", "I am finished building my team"],
     },
   ];
@@ -215,7 +201,7 @@ function employeeRole() {
         break;
       default:
         writeHTML();
-        };  
+    }
   });
 }
 
@@ -228,7 +214,7 @@ function engineerCard() {
       answers.engineerGitHub
     );
     team.push(engineer);
-    employeeID.push(answers.engineerId)
+    employeeID.push(answers.engineerId);
     employeeRole();
   });
 }
@@ -242,26 +228,16 @@ function internCard() {
       answers.internSchool
     );
     team.push(intern);
-    employeeID.push(answers.internId)
+    employeeID.push(answers.internId);
     employeeRole();
   });
 }
 
-// function writeToFile(fileName, data) {
-//   return fs.writeFileSync(path.join(__dirname, fileName), data);
-// }
-
 function writeHTML() {
   fs.writeFile("index.html", render.generateHTML(team), (err) => {
-    err ? console.log(err) : console.log("index.html generated")
-  })
-  // writeToFile("index.html", render(team))
-  console.log(team)
+    err ? console.log(err) : console.log("index.html generated");
+  });
+  console.log(team);
 }
 
-
 init();
-
-// team.push()
-// const manager = new Manager("tyler" , 10, "test.com");
-// team.push(manager)

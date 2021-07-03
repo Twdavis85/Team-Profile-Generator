@@ -4,17 +4,23 @@ function employeeHTML(team) {
   let employee;
   for (let i = 0; i < team.length; i++) {
     if (team[i].getRole() === "Manager") {
-      employee = `<div class="col">
+      employee = `<div class="col-4 px-3">
             <div class="card text-white bg-primary mb-3">
               <div class="card-body">
               <div class="card-header">
               <h2 class="text-capitalize">${team[i].name}</h2>
-              <h4>${team[i].getRole()}</h4>
+              <h4><i class="fas fa-user-tie"></i> ${team[i].getRole()}</h4>
             </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Employee ID Number: ${team[i].id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:${team[i].email}">${team[i].email}</a></li>
-                  <li class="list-group-item">Office Number: ${team[i].officeNumber}</li>
+                  <li class="list-group-item">Employee ID: <strong>${
+                    team[i].id
+                  }</strong></li>
+                  <li class="list-group-item">Email: <a href="mailto:${
+                    team[i].email
+                  }">${team[i].email}</a></li>
+                  <li class="list-group-item">Office Number: <strong>${
+                    team[i].officeNumber
+                  }</strong></li>
                 </ul>
               </div>
             </div>
@@ -22,17 +28,23 @@ function employeeHTML(team) {
 
       employeeCards.push(employee);
     } else if (team[i].getRole() === "Engineer") {
-      employee = `<div class="col">
+      employee = `<div class="col-4 px-3">
             <div class="card text-white bg-secondary mb-3">
               <div class="card-body">
               <div class="card-header">
               <h2 class="text-capitalize">${team[i].name}</h2>
-              <h4>${team[i].getRole()}</h4>
+              <h4><i class="fas fa-laptop-code"></i> ${team[i].getRole()}</h4>
             </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Employee ID Number: ${team[i].id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:${team[i].email}">${team[i].email}</a></li>
-                  <li class="list-group-item">GitHub: <a href="https://github.com/${team[i].gitHub}" target="_blank">${team[i].gitHub}</a></li>
+                  <li class="list-group-item">Employee ID: <strong>${
+                    team[i].id
+                  }</strong></li>
+                  <li class="list-group-item">Email: <a href="mailto:${
+                    team[i].email
+                  }">${team[i].email}</a></li>
+                  <li class="list-group-item">GitHub: <a href="https://github.com/${
+                    team[i].gitHub
+                  }" target="_blank">${team[i].gitHub}</a></li>
                 </ul>
               </div>
             </div>
@@ -40,16 +52,20 @@ function employeeHTML(team) {
 
       employeeCards.push(employee);
     } else {
-      employee = `<div class="col">
+      employee = `<div class="col-4 px-3">
             <div class="card text-white bg-success mb-3">
               <div class="card-body">
               <div class="card-header">
               <h2 class="text-capitalize">${team[i].name}</h2>
-              <h4>${team[i].getRole()}</h4>
+              <h4><i class="fas fa-user-graduate"></i> ${team[i].getRole()}</h4>
             </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Employee ID Number: ${team[i].id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:${team[i].email}">${team[i].email}</a></li>
+                  <li class="list-group-item">Employee ID: <strong>${
+                    team[i].id
+                  }</strong></li>
+                  <li class="list-group-item">Email: <a href="mailto:${
+                    team[i].email
+                  }">${team[i].email}</a></li>
                   <li class="list-group-item">School: ${team[i].school}</li>
                 </ul>
               </div>
@@ -77,6 +93,12 @@ function generateHTML(team) {
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+    crossorigin="anonymous"
+  />
     <title>My Team</title>
   </head>
   <body>
@@ -85,7 +107,7 @@ function generateHTML(team) {
         <h1 class="display-2 fw-bold">My Team</h1>
       </div>
     </div>
-  <div class="row row-cols-1 row-cols-md-3 g-4 pt-3 ms-3 me-3 justify-content-center">
+    <div class="row row-cols-4 g-3 pt-3 ms-5 me-5 justify-content-center">
     ${employeeCards.join("")}
   </div>
   </body>
@@ -93,6 +115,6 @@ function generateHTML(team) {
 }
 
 module.exports = {
-    generateHTML,
-    employeeHTML 
-}
+  generateHTML,
+  employeeHTML,
+};
