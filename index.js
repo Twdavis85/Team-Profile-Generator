@@ -5,6 +5,7 @@ const Intern = require("./library/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const render = require("./utils/generateHTML");
 
 const team = [];
 
@@ -77,6 +78,7 @@ const internQuestions = [
   },
 ];
 
+
 function init() {
   inquirer.prompt(managerQuestions).then((answers) => {
     const manager = new Manager(
@@ -107,7 +109,10 @@ function employeeRole() {
         break;
       case "Intern":
         internCard();
-    }
+        break;
+      case "Done":
+        writeHTML();
+        };  
   });
 }
 
@@ -136,7 +141,20 @@ function internCard() {
     employeeRole();
   });
 }
-console.log(team);
+
+// function writeToFile(fileName, data) {
+//   return fs.writeFileSync(path.join(__dirname, fileName), data);
+// }
+
+function writeHTML() {
+  fs.writeFile("index.html", render.generateHTML(team), (err) => {
+    err ? console.log(err) : console.log("index.html generated")
+  })
+  // writeToFile("index.html", render(team))
+  console.log(team)
+}
+
+
 init();
 
 // team.push()
