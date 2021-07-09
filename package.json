@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose tests/*",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest --verbose tests/*"
   },
   "repository": {
     "type": "git",

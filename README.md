@@ -4,8 +4,8 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Test](#test)
+  - [Demo](#demo)
+  - [Review URL](#review-url)
   - [Questions](#questions)
   - [License](#license)
 
@@ -15,13 +15,19 @@ This application allows the user to create and html file with a card for each me
 for this application the user will need node.js, inquirer package, and a terminal to run the application
 ## Usage
 once the user has all the needed files they can open the terminal and run node index.js. After this is done they will answer a series of questions about the members of the team.  When all the the team member's info has been entered the application will generate an html page with a card foe each member of the group
-## Contributing
-CHANGE
-## Test
-CHANGE
+## Demo
+[Demo Video](https://drive.google.com/file/d/1KbZgf7ieZfiYDSZIV2flXEWASwYcxKAM/view?usp=sharing) &nbsp; | &nbsp;
+[Test Demo](https://drive.google.com/file/d/1YRfdHo7gC_bLkEIvqJiQMQ6XWt3RQ6N6/view?usp=sharing)
+## Review URL
+[Repository](https://github.com/Twdavis85/Team-Profile-Generator) &nbsp; | &nbsp; 
+[Generated HTML](https://twdavis85.github.io/Team-Profile-Generator/)
 ## Questions
 To check out my work and follow me on GitHub visit: [Twdavis85](https://github.com/Twdavis85) <br/>
-If you have any questions about this or any other project feel free to email me at: [tdnc85@yahoo.com](tdnc85@yahoo.com)
+If you have any questions about this or any other project feel free to email me at: [tdnc85@yahoo.com](mailto:tdnc85@yahoo.com)
+
+#
+![Screenshot of generated html page](./images/teamscreenshot.png)
+
 ## License
 Copyright 2021 &ensp; Tyler Davis
 
